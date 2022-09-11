@@ -5,8 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Drop Down Menu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        html, body{
+            margin: 0px;
+            height: 100%;
+            background-color: rgb(225, 255, 225);
+        }
+        .navbar {
+            background-color: rgb(50, 150, 50);
+        }
+        .navbar-dropdown {
+            background-color: rgb(50, 150, 50);
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+        }
+        .green {
+            border-left: 5px solid rgb(100, 255, 50);
+            background-color: rgb(255, 255, 255);
+            padding: 15px;
+            margin: 25px;
+        }
+        .yellow {
+            border-left: 5px solid rgb(250, 250, 50);
+            background-color: rgb(255, 255, 255);
+            padding: 15px;
+            margin: 25px;
+        }
+    </style>
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-item" style="background-color: rgb(50, 150, 50)"><strong>File</strong></a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">New</a>
+                        <a class="navbar-item">Open</a>
+                        <a class="navbar-item">Save</a>
+                        <a class="navbar-item">Print</a>
+                        <a class="navbar-item">Close</a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-item" style="background-color: rgb(50, 150, 50)"><strong>Edit</strong></a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">Undo</a>
+                        <a class="navbar-item">Redo</a>
+                        <a class="navbar-item">Cut</a>
+                        <a class="navbar-item">Copy</a>
+                        <a class="navbar-item">Paste</a>
+                        <a class="navbar-item">Delete</a>
+                        <a class="navbar-item">Select All</a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-item" style="background-color: rgb(50, 150, 50)"><strong>View</strong></a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">Zoom In</a>
+                        <a class="navbar-item">Zoom Out</a>
+                        <a class="navbar-item">Actual Size</a>
+                        <a class="navbar-item">Fit Page</a>
+                        <a class="navbar-item">Fit Width</a>
+                        <a class="navbar-item">Fit Height</a>
+                        <a class="navbar-item">Rotate Left</a>
+                        <a class="navbar-item">Rotate Right</a>
+                        <a class="navbar-item">Full Screen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="green">
+            <h3><strong>Instructions</strong></h3>
+            <p>
+                Recreate this page using only CSS. Do yourself a favor and
+                1) Do not view the source. Figure it out yourself.
+                2) Do not search for the solution. Learn CSS until you know enough to do this.
+            </p>
+        </div>
+        <div class="yellow">
+            <h3><strong>Extra Credit</strong></h3>
+            <p>
+                Notice how the Edit menu (besides for not being bold) reacts to clicks.
+                If you click the edit menu, it remains open until you click somewhere else.
+                (This you might need to search for)
+            </p>
+        </div>
+    </div>
 </body>
 </html>
