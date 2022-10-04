@@ -3,15 +3,15 @@
   import NavVue from './components/Nav.vue';
   </script>
   
-  <template>
-    <header>
-      <NavVue />
-    </header>
-    <div class="container">
-      <RouterView />
+<template>
+  <header>
+    <NavVue />
+  </header>
+  <div class="container">
+    <RouterView />
     </div>
-  </template>
+</template>
+
+<style scoped>
   
-  <style scoped>
-  </style>
-  
+</style>
