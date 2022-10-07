@@ -1,69 +1,40 @@
+<script setup lang="ts">
+    import { ref } from 'vue';
+    let isActive = ref(false);
+</script>
+
 <template>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo-white.png" alt="bulma-logo-white" width="112" height="28">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
             </a>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu"  :class="{ 'is-active': isActive }">
             <div class="navbar-start">
-                <a class="navbar-item" href="https://bulma.io/">
-                    Home
-                </a>
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item">Documentation</a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="https://bulma.io/documentation/">
-                        Docs
-                    </a>
+                    <a class="navbar-link">More</a>
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="https://bulma.io/documentation/overview/">
-                            Overview
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-                            Modifiers
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/columns/">
-                            Columns
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/layout/">
-                            Layout
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/form/">
-                            Form
-                        </a>
+                        <a class="navbar-item">About</a>
+                        <a class="navbar-item">Jobs</a>
+                        <a class="navbar-item">Contact</a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item" href="https://bulma.io/documentation/elements/">
-                            Elements
-                        </a>
-                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/">
-                            Components
-                        </a>
+                        <a class="navbar-item">Report an issue</a>
                     </div>
                 </div>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <div class="field is-grouped">
-                        <p class="control">
-                            <a class="button is-white" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                                <span class="icon">
-                                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                                </span>
-                                <span>Tweet</span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
-                                <span class="icon">
-                                    <i class="fas fa-download" aria-hidden="true"></i>
-                                </span>
-                                <span>Download</span>
-                            </a>
-                        </p>
+                    <div class="buttons">
+                        <a class="button is-primary"><strong>Sign up</strong></a>
+                        <a class="button is-light">Log in</a>
                     </div>
                 </div>
             </div>
