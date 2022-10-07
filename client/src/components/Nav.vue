@@ -4,40 +4,49 @@
 </script>
 
 <template>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            <a class="navbar-item">
+                <h1 class="title is-4">Exercise App</h1>
             </a>
+            <!-- Menu for mobile devices -->
             <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu"  :class="{ 'is-active': isActive }">
+        <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
             <div class="navbar-start">
-                <a class="navbar-item">Home</a>
-                <a class="navbar-item">Documentation</a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">More</a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item">About</a>
-                        <a class="navbar-item">Jobs</a>
-                        <a class="navbar-item">Contact</a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">Report an issue</a>
-                    </div>
-                </div>
+                <a class="navbar-item">
+                    Home
+                </a>
+                <a class="navbar-item">
+                    Journal
+                </a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary"><strong>Sign up</strong></a>
-                        <a class="button is-light">Log in</a>
+                        <a class="button is-white">
+                            Sign Up
+                        </a>
+                        <a class="button is-white">
+                            Log In
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 </template>
+
+<style lang="scss">
+    nav {
+        box-shadow: 0px 1px 2px rgb(205, 205, 205);
+        .navbar-brand {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+</style>
