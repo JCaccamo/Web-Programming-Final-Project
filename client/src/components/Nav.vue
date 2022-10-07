@@ -9,36 +9,36 @@
             <a class="navbar-item">
                 <h1 class="title is-4">Exercise App</h1>
             </a>
-            <!-- Menu for mobile devices -->
+            <!-- menu for mobile devices -->
             <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
-        </div>
+        </div><!-- end of navbar-brand -->
         <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" href="">
                     Home
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="">
                     Journal
                 </a>
-            </div>
+            </div><!-- end of navbar-start -->
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-white">
+                        <a class="button is-white" href="">
                             Sign Up
                         </a>
-                        <a class="button is-white">
+                        <a class="button is-white" href="">
                             Log In
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </nav>
+            </div><!-- end of navbar-end -->
+        </div><!-- end of navbar-menu -->
+    </nav><!-- end of navbar -->
 </template>
 
 <style lang="scss">
