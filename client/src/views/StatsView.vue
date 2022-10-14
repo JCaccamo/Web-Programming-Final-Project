@@ -3,13 +3,13 @@
 </script>
 
 <template>
-  <div class="about">
-    <h1 class="title">About</h1>
-  </div>
+    <div class="stats">
+        <h1 class="title">Stats</h1>
+    </div>
 </template>
 
 <style lang="scss">
-  .about {
+  .stats {
     margin: 50px;
   }
 </style>

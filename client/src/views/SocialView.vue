@@ -3,13 +3,13 @@
 </script>
 
 <template>
-  <div class="about">
-    <h1 class="title">About</h1>
-  </div>
+    <div class="social">
+        <h1 class="title">Social</h1>
+    </div>
 </template>
 
 <style lang="scss">
-  .about {
+  .social {
     margin: 50px;
   }
 </style>

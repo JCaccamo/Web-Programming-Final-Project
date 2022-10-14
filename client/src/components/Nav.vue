@@ -25,6 +25,15 @@
                 <router-link to="/journal" class="navbar-item">
                     Journal
                 </router-link>
+                <router-link to="/activity" class="navbar-item">
+                    Activity
+                </router-link>
+                <router-link to="/social" class="navbar-item">
+                    Social
+                </router-link>
+                <router-link to="/stats" class="navbar-item">
+                    Stats
+                </router-link>
                 <router-link to="/about" class="navbar-item">
                     About
                 </router-link>

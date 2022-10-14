@@ -10,6 +10,6 @@
 
 <style lang="scss">
   .home {
-    margin-top: 50px;
+    margin: 50px;
   }
 </style>

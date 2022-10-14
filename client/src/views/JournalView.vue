@@ -52,7 +52,7 @@
 
 <style lang="scss">
     .journal {
-        margin-top: 50px;
+        margin: 50px;
     }
     ul {
         display: flex;
