@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { ref } from 'vue';
+    import LoginBadge from './LoginBadge.vue';
     let isActive = ref(false);
 </script>
 
@@ -18,23 +19,19 @@
         </div><!-- end of navbar-brand -->
         <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
             <div class="navbar-start">
-                <a class="navbar-item" href="">
+                <router-link to="/" class="navbar-item">
                     Home
-                </a>
-                <a class="navbar-item" href="">
+                </router-link>
+                <router-link to="/journal" class="navbar-item">
                     Journal
-                </a>
+                </router-link>
+                <router-link to="/about" class="navbar-item">
+                    About
+                </router-link>
             </div><!-- end of navbar-start -->
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-white" href="">
-                            Sign Up
-                        </a>
-                        <a class="button is-white" href="">
-                            Log In
-                        </a>
-                    </div>
+                    <LoginBadge></LoginBadge>
                 </div>
             </div><!-- end of navbar-end -->
         </div><!-- end of navbar-menu -->
@@ -48,5 +45,8 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+    }
+    .router-link-active {
+        border-bottom: #00AA00 4px solid;
     }
 </style>
