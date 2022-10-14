@@ -42,8 +42,12 @@
     nav {
         box-shadow: 0px 1px 2px rgb(205, 205, 205);
         .navbar-brand {
-            padding-left: 20px;
-            padding-right: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .navbar-item {
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
     .router-link-active {
