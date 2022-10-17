@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item">
                 <h1 class="title is-4">Exercise App</h1>
@@ -60,6 +60,6 @@
         }
     }
     .router-link-active {
-        border-bottom: #00AA00 4px solid;
+        border-bottom: #0050aa 4px solid;
     }
 </style>
