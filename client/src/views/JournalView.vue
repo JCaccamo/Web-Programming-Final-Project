@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { ref } from 'vue';
     import { uid } from 'uid';
     
@@ -8,8 +8,8 @@
             // Create data
             const workoutName = ref("");
             const workoutType = ref("select-workout");
-            const exercises = ref([1]);
-            const errorMsg = ref(null);
+            const exercises: any = ref([1]);
+            const errorMsg: any = ref(null);
             // Add exercise
             const addExercise = () => {
                 if (workoutType.value === 'strength') {
@@ -31,9 +31,9 @@
                 })
             }
             // Delete exercise
-            const deleteExercise = (id) => {
+            const deleteExercise = (id: any) => {
                 if (exercises.value.length > 1) {
-                    exercises.value = exercises.value.filter((exercise) => exercise.id !== id);
+                    exercises.value = exercises.value.filter((exercise: any) => exercise.id !== id);
                     return;
                 }
                 errorMsg.value = "Error: You must have at least one exercise";
