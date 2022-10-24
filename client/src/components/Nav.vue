@@ -34,6 +34,9 @@
                 <router-link to="/stats" class="navbar-item">
                     Stats
                 </router-link>
+                <router-link to="/admin" class="navbar-item">
+                    Admin
+                </router-link>
                 <router-link to="/about" class="navbar-item">
                     About
                 </router-link>
