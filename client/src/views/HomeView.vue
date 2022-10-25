@@ -3,13 +3,11 @@
 </script>
 
 <template>
-  <div class="home">
+  <div class="section">
     <h1 class="title">Getting Started</h1>
   </div>
 </template>
 
 <style lang="scss">
-  .home {
-    margin: 50px;
-  }
+
 </style>

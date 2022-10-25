@@ -7,9 +7,9 @@
 <template>
     <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item">
+            <div class="navbar-item">
                 <h1 class="title is-4">Exercise App</h1>
-            </a>
+            </div>
             <!-- menu for mobile devices -->
             <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
@@ -54,15 +54,19 @@
     nav {
         box-shadow: 0px 1px 2px rgb(205, 205, 205);
         .navbar-brand {
-            margin-left: 20px;
+            margin-left: 80px;
             margin-right: 20px;
         }
         .navbar-item {
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .navbar-end {
+            margin-left: 20px;
+            margin-right: 80px;
         }
     }
     .router-link-active {
-        border-bottom: #0050aa 4px solid;
+        border-bottom: #0050aa 5px solid;
     }
 </style>
