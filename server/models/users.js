@@ -1,4 +1,4 @@
-const data = require('../data/users.json');
+const data = require('../data/data.json');
 
 function getUsers() {
     return data.users;

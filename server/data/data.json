@@ -1,26 +1,28 @@
-[
-    {
-        "firstName": "Jason",
-        "lastName": "Caccamo",
-        "userName": "JCaccamo",
-        "friends": ["Moshe", "Dwayne"],
-        "workouts": [],
-        "recent":[]
-    },
-    {
-        "firstName": "Moshe",
-        "lastName": "Plotkin",
-        "userName": "MPlotkin",
-        "friends": ["Jason", "Dwayne"],
-        "workouts": [],
-        "recent":[]
-    },
-    {
-        "firstName": "Dwayne",
-        "lastName": "Johnson",
-        "userName": "DJohnson",
-        "friends": ["Jason", "Moshe"],
-        "workouts": [],
-        "recent":[]
-    }
-]
+{
+    "users": [
+        {
+            "firstName": "Jason",
+            "lastName": "Caccamo",
+            "userName": "JCaccamo",
+            "friends": ["Moshe", "Dwayne"],
+            "workouts": [],
+            "recent":[]
+        },
+        {
+            "firstName": "Moshe",
+            "lastName": "Plotkin",
+            "userName": "MPlotkin",
+            "friends": ["Jason", "Dwayne"],
+            "workouts": [],
+            "recent":[]
+        },
+        {
+            "firstName": "Dwayne",
+            "lastName": "Johnson",
+            "userName": "DJohnson",
+            "friends": ["Jason", "Moshe"],
+            "workouts": [],
+            "recent":[]
+        }
+    ]
+}
