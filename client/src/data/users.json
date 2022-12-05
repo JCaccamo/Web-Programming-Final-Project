@@ -1,0 +1,31 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "firstName": "Jason",
+            "lastName": "Caccamo",
+            "userName": "JCaccamo",
+            "friends": ["Moshe", "Dwayne"],
+            "workouts": [],
+            "recent":[]
+        },
+        {
+            "id": "2",
+            "firstName": "Moshe",
+            "lastName": "Plotkin",
+            "userName": "MPlotkin",
+            "friends": ["Jason", "Dwayne"],
+            "workouts": [],
+            "recent":[]
+        },
+        {
+            "id": "3",
+            "firstName": "Dwayne",
+            "lastName": "Johnson",
+            "userName": "DJohnson",
+            "friends": ["Jason", "Moshe"],
+            "workouts": [],
+            "recent":[]
+        }
+    ]
+}
