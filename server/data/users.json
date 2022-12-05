@@ -1,6 +1,7 @@
 {
     "users": [
         {
+            "id": "1",
             "firstName": "Jason",
             "lastName": "Caccamo",
             "userName": "JCaccamo",
@@ -9,6 +10,7 @@
             "recent":[]
         },
         {
+            "id": "2",
             "firstName": "Moshe",
             "lastName": "Plotkin",
             "userName": "MPlotkin",
@@ -17,6 +19,7 @@
             "recent":[]
         },
         {
+            "id": "3",
             "firstName": "Dwayne",
             "lastName": "Johnson",
             "userName": "DJohnson",
