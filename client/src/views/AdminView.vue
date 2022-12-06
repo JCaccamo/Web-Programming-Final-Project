@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { reactive } from 'vue';
-  import data from '../data/data.json';
+  import data from '../data/users.json';
   import session from '../stores/session.js';
   const users = reactive(data);
   session.user = { firstName:"Jason", lastName:"Caccamo" }; // Admin is Jason Caccamo
