@@ -1,9 +1,12 @@
 <script setup lang="ts">
-  import { reactive } from 'vue';
-  import data from '../data/users.json';
+  import { computed, reactive, ref, watch } from "vue";
+  import { RouterLink } from "vue-router";
+  import { isLoading } from "@/stores/session";
+  import { getUsers, type User } from "../stores/users";
   import session from '../stores/session.js';
-  const users = reactive(data);
-  session.user = { firstName:"Jason", lastName:"Caccamo" }; // Admin is Jason Caccamo
+  const users = reactive([] as User[]);
+  getUsers().then( x=> users.push(...x.users));
+  session.user = { firstName:"Jason", lastName:"Caccamo", email:"caccamoj1@newpaltz.edu" }; // Admin is Jason Caccamo
   function removeUser( name:String ) {
     let index = 0;
     for (let i = 0; i < users.length; i++) {
