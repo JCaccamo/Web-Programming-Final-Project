@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 const usersController = require('./controllers/users');
+const workoutsController = require('./controllers/workouts');
 
 const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
@@ -25,6 +26,7 @@ app
     sss.PORT();
 })
 .use('/users', usersController)
+.use('/workouts', workoutsController)
 
 app.get('*', (req, res) => {
     res.sendFile('index.html', {root: './client/dist'});

@@ -1,19 +1,24 @@
 const express = require('express');
-const workouts = require('../models/workouts');
+const { get, add, update } = require('../models/workouts');
 
 const app = express.Router();
 
-app
-    .get('/', (req, res) => {
-        res.status(200).send(users.getWorkouts());
-    })
-    .get('/:id', (req, res) => {
-        const workout = workouts.getWorkout(+req.params.workouts);
-        if (workout) {
-            res.status(200).send(workout);
-        } else {
-            res.status(404).send('Workout not found')
-        }
-    })
+app.get('/:userId', (req, res, next) => {
+    get(req.params.userId)
+    .then(x=> res.status(200).send(x))
+    .catch(next);
+});
+
+app.post('/:userId', (req, res, next) => {
+    add(req.params.userId, req.body.workoutId, +req.body.quantity)
+    .then(x=> res.status(201).send(x))
+    .catch(next);
+});
+
+app.patch('/:userId/:workoutId/:quantity', (req, res, next) => {
+    update(req.params.userId, req.params.workoutId, +req.params.quantity)
+    .then(x=> res.status(200).send(x))
+    .catch(next);
+});
 
 module.exports = app;
