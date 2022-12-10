@@ -5,6 +5,7 @@ import ActivityView from '../views/ActivityView.vue'
 import SocialView from '../views/SocialView.vue'
 import StatsView from '../views/StatsView.vue'
 import AdminView from '../views/AdminView.vue'
+import LoginView from '../views/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: AdminView,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView,
     },
     {
       path: '/about',

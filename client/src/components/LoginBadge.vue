@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    import { RouterLink } from 'vue-router';
     import session, { login, logout } from '../stores/session'
 </script>
 
@@ -8,24 +9,13 @@
             Sign Up
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
-            <a class="button is-light">
+            <RouterLink class="button is-light" to="login">
                 Log In
-            </a>
-            <div class="navbar-dropdown">
-                <a class="navbar-item" @click="login('Jason', 'Caccamo')">
-                    Jason Caccamo
-                </a>
-                <a class="navbar-item" @click="login('Moshe', 'Plotkin')">
-                    Moshe Plotkin
-                </a>
-                <a class="navbar-item" @click="login('Dwayne', 'Johnson')">
-                    Dwayne Johnson
-                </a>
-            </div>
+            </RouterLink>
         </div>
     </div>
     <div class="welcome" v-else>
-        <h1>Welcome {{session.user.firstName}} {{session.user.lastName}}</h1>
+        <h1>Welcome {{session.user.email}}</h1>
         <a class="button is-light" @click="logout()">
             Log out
         </a>

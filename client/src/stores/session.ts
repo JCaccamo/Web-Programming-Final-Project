@@ -31,10 +31,8 @@ export async function api<T>(url: string, data: any = null, method?: string ){
     return {} as T;
 }
 
-export function login(firstName: string, lastName: string, email: string, password: string) {
+export function login(email: string, password: string) {
     session.user = {
-        firstName,
-        lastName,
         email,
         password,
     };
