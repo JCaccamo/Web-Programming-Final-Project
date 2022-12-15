@@ -1,0 +1,31 @@
+{
+    "workouts": [
+        {
+            "id": 1,
+            "workoutName": "Push",
+            "workoutType": "Strength Training",
+            "exercise": "Bench Press",
+            "sets": 3,
+            "reps": 10,
+            "weight": 185
+        },
+        {
+            "id": 2,
+            "workoutName": "Walk to class",
+            "workoutType": "Cardio",
+            "type": "Walk",
+            "distance": 1,
+            "duration": 10,
+            "pace": 3
+        },
+        {
+            "id": 3,
+            "workoutName": "Legs",
+            "workoutType": "Strength Training",
+            "exercise": "Squats",
+            "sets": 3,
+            "reps": 10,
+            "weight": 405
+        }
+    ]
+}

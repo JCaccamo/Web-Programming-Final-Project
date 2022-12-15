@@ -2,4 +2,7 @@
 POST http://127.0.0.1:3003/users/seed
 
 ###
+POST http://127.0.0.1:3003/workouts/seed
+
+###
 http://127.0.0.1:3003/workouts/caccamoj1@newpaltz.edu
