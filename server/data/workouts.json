@@ -7,7 +7,8 @@
             "exercise": "Bench Press",
             "sets": 3,
             "reps": 10,
-            "weight": 185
+            "weight": 185,
+            "calories": 100
         },
         {
             "id": 2,
@@ -16,7 +17,8 @@
             "type": "Walk",
             "distance": 1,
             "duration": 10,
-            "pace": 3
+            "pace": 3,
+            "calories": 100
         },
         {
             "id": 3,
@@ -25,7 +27,8 @@
             "exercise": "Squats",
             "sets": 3,
             "reps": 10,
-            "weight": 405
+            "weight": 405,
+            "calories": 200
         }
     ]
 }

@@ -29,14 +29,15 @@ export interface ListEnvelope<T> {
   
 export interface Workout {
     _id: string
-    workoutName: string,
-    workoutType: string,
-    exercise: string,
-    sets: number,
-    reps: number,
-    weight: number,
-    type: string,
-    distance: number,
-    duration: number,
+    workoutName: string
+    workoutType: string
+    exercise: string
+    sets: number
+    reps: number
+    weight: number
+    type: string
+    distance: number
+    duration: number
     pace: number
+    calories: number
 }
