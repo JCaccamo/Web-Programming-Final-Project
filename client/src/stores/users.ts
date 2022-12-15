@@ -9,7 +9,7 @@ export function getUser(id: string) {
 }
 
 export function addUser(user: User) {
-    return api<User>(`products`, user);
+    return api<User>(`users`, user);
 }
 
 export function updateUser(id: string, user: User) {
