@@ -40,4 +40,6 @@ export interface Workout {
     duration: number
     pace: number
     calories: number
+    thumbnail: string
+    description: string
 }
