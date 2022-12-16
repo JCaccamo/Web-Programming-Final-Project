@@ -22,15 +22,15 @@
         });       
     }
 
-    // const brands = ref(['Apple', 'Microsoft']);
-    // const categories = ref(['Phone', 'Watch']);
-    // api<string[]>('products/brands').then(x=> brands.value = x);
-    // api<string[]>('products/categories').then(x=> categories.value = x);
+    const workoutType = ref(['Strength Training', 'Cardio']);
+    const cardioType = ref(['Walk', 'Run']);
+    api<string[]>('workouts/workoutType').then(x=> workoutType.value = x);
+    api<string[]>('workouts/cardioType').then(x=> cardioType.value = x);
 
-    async function getGptCalories() {
-        const calories = await createDescription(workout.value.workoutName);
-        workout.value.calories = calories;
-        return calories;
+    async function getGptDescription() {
+        const description = await createDescription(workout.value.workoutName);
+        workout.value.description = description;
+        return description;
     }
 
     async function save(){
@@ -69,158 +69,130 @@
 </script>
 
 <template>
-    <div class="columns">
-        <div class="column is-three-quarters">
-            <form class="modal-card" @submit.prevent="save">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">
-                        {{ isNew ? 'New' : 'Edit' }} Workout
-                    </p>
-                </header>
-                <section class="modal-card-body">
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Name</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <p class="control is-expanded has-icons-left">
-                                    <input class="input" type="text" placeholder="Name" v-model="workout.workoutName">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </p>
+    <div class="section">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <form class="modal-card" @submit.prevent="save">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">
+                            {{ isNew ? 'New' : 'Edit' }} Workout
+                        </p>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Workout Name</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control is-expanded has-icons-left">
+                                        <input class="input" type="text" placeholder="Name" v-model="workout.workoutName">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Type</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field has-addons">
-                                <p class="control">
-                                    <a class="button is-static">
 
-                                    </a>
-                                </p>
-                                <p class="control is-expanded">
-                                    <input class="input" type="tel" placeholder="Type"  v-model="workout.workoutType">
-                                </p>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Workout Type</label>
                             </div>
-                        </div>
-                    </div>
-
-                    
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Brand</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <div class="select is-fullwidth">
-                                        <select  v-model="product.brand">
-                                            <option :value="undefined">-- Please Select a Brand --</option>
-                                            <option v-for="b in brands" :key="b">{{b}}</option>
-                                        </select>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select  v-model="workout.workoutType">
+                                                <option :value="undefined">-- Please Select a Workout Type --</option>
+                                                <option v-for="w in workoutType" :key="w">{{w}}</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Category</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <div class="select is-fullwidth">
-                                        <select  v-model="product.category">
-                                            <option :value="undefined">-- Please Select a Category --</option>
-                                            <option v-for="b in categories" :key="b">{{b}}</option>
-                                        </select>
+                        
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Cardio Type</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select  v-model="workout.type">
+                                                <option :value="undefined">-- Please Select a Cardio Type --</option>
+                                                <option v-for="w in cardioType" :key="w">{{w}}</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Thumbnail</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field  has-addons">
-                                <div class="control is-expanded">
-                                    <input class="input" type="text" placeholder="Complete URL" v-model="product.thumbnail">
-                                </div>
-                                <p class="control">
-                                        <a class="button is-warning" @click.prevent="(isTenorSearchOpen = !isTenorSearchOpen)">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Thumbnail</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field  has-addons">
+                                    <div class="control is-expanded">
+                                        <input class="input" type="text" placeholder="Complete URL" v-model="workout.thumbnail">
+                                    </div>
+                                    <p class="control">
+                                        <a class="button is-info" @click.prevent="(isTenorSearchOpen = !isTenorSearchOpen)">
                                             Find a Gif
                                         </a>
                                     </p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box" v-show="isTenorSearchOpen">
-                        <h3>Tenor Search</h3>
-                        <input class="input" type="text" placeholder="Complete URL" v-model="tenorSearch" />
-                        <div class="tenor-results">
-                            <div    class="image tenor-gif" v-for="tenorGif in tenorResults" :key="tenorGif.id" 
-                                    @click.prevent="product.thumbnail = tenorGif.media_formats.mediumgif.url; isTenorSearchOpen = false" >
-                                <img :src="tenorGif.media_formats.tinygif.url" />
-                            </div>                            
-                        </div>
-
-                    </div>
-                    
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Description</label>
-                            <button class="button is-warning is-small" @click.prevent="getGptCalories" >Generate</button>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <textarea class="textarea" placeholder="Full description of product" v-model="product.description"></textarea>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="box" v-show="isTenorSearchOpen">
+                            <h3>Tenor Search</h3>
+                            <input class="input" type="text" placeholder="Complete URL" v-model="tenorSearch" />
+                            <div class="tenor-results">
+                                <div    class="image tenor-gif" v-for="tenorGif in tenorResults" :key="tenorGif.id" 
+                                        @click.prevent="workout.thumbnail = tenorGif.media_formats.mediumgif.url; isTenorSearchOpen = false" >
+                                    <img :src="tenorGif.media_formats.tinygif.url" />
+                                </div>                            
+                            </div>
+                        </div>
+                        
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Description</label>
+                                <button class="button is-info is-small" @click.prevent="getGptDescription">Generate</button>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <textarea class="textarea" placeholder="Full description of workout" v-model="workout.description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </section>
+                        <footer class="modal-card-foot">
+                            <button class="button is-info">Save changes</button>
+                            <button class="button" @click.prevent="cancel">Cancel</button>
+                        </footer>
+                    </form>
+                </div>
+            <div class="column card">
+                <div class="card-content">
+                    <h3 class="title">{{ workout.workoutName }}</h3>
+                    <div class="workout-image">
+                        <img :src="workout.thumbnail" :alt="workout.workoutName" />
                     </div>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button class="button is-success">Save changes</button>
-                        <button class="button" @click.prevent="cancel">Cancel</button>
-                    </footer>
-                </form>
-            </div>
-        <div class="column card">
-            <div class="card-content">
-                <h3 class="title">{{ product.title }}</h3>
-                <div class="product-image">
-                    <img :src="product.thumbnail" :alt="product.title" />
+                    <div class="workout-info">
+                        <p>{{ workout.description }}</p>
+                    </div>
                 </div>
-                <div class="product-info">
-
-                    <p class="price subtitle">
-                        <span class="currency">$</span>
-                        <span class="amount">{{ product.price }}</span>
-                    </p>
-                    <p>{{ product.description }}</p>
-                
-                </div>
-
             </div>
         </div>
     </div>
-    
 </template>
 
 <style scoped>

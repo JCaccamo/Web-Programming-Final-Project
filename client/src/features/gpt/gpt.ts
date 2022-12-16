@@ -9,11 +9,11 @@ export function gptApi(url: string, data?: any, method?: string, headers?: Heade
     return myFetch<GPTResponse>(url, data, method, headers)
 }
 
-export async function createDescription(title: string){
+export async function createDescription(workoutName: string) {
     // get a description from the gpt rest services
     const result  = await gptApi("https://api.openai.com/v1/completions", {
         "model": "text-davinci-003",
-        "prompt": `Create description for "${title}" to be used on an ecommerce site` ,
+        "prompt": `Create description for "${workoutName}"`,
         "max_tokens": 45,
         "temperature": 0.18
     })
